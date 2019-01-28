@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+
+    <script>
+        function abc() {
+            $.ajax({
+                type: "post",
+                url: "test4?abc=12345",
+                contentType:"application/json",
+                data: JSON.stringify({}),
+                dataType: "json",
+                success: function(data){
+                    alert(data.code);
+                }
+            });
+        }
+
+        /*function abc() {
+            var formData = new FormData();
+
+            formData.append('file', $('input[name=file]')[0].files[0]);
+            formData.append("id",123);
+            formData.append("name","aaa");
+            $.ajax({
+                type: "post",
+                url: "test3?abc=234",
+                data: formData,
+                //dataType: "json",
+                processData:false,
+                contentType: false,
+                cache: false,
+                success: function(data){
+                    alert(data.code);
+                }
+            });
+        }*/
+
+    </script>
+</head>
+<body>
+<form id="formUp"><input type="file" name="file" id="file"></form>
+
+    <button onclick="abc()">anniu</button>
+</body>
+</html>
